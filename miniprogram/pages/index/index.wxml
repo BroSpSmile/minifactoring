@@ -10,7 +10,7 @@
       style="background-image: url({{avatarUrl}})"
     ></button>
     <view>
-      <button class="userinfo-nickname" bindtap="onGetOpenid">点击获取 openid</button>
+      <i-button type="primary" bindtap="onGetOpenid">点击获取openid</i-button>
     </view>
   </view>
 
