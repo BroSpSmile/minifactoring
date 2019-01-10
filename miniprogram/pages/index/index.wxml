@@ -11,7 +11,7 @@
     <i-row>
       <i-grid-item>
           <i-grid-icon ><i-icon size="24" type="tasklist"/></i-grid-icon>
-          <i-grid-label>立项</i-grid-label>
+          <i-grid-label>项目信息</i-grid-label>
       </i-grid-item>
       <i-grid-item>
         <i-grid-icon><i-icon size="24" type="group"/></i-grid-icon>
