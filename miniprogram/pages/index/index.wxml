@@ -3,15 +3,15 @@
 <view>
   <i-grid>
     <i-row>
-      <i-grid-item>
+      <i-grid-item bindtap="nav" data-menu="project">
           <i-grid-icon ><i-icon size="24" type="tasklist"/></i-grid-icon>
           <i-grid-label>我的项目</i-grid-label>
       </i-grid-item>
-      <i-grid-item>
+      <i-grid-item bindtap="nav" data-menu="meeting">
         <i-grid-icon><i-icon size="24" type="message"/></i-grid-icon>
         <i-grid-label>会议</i-grid-label>
       </i-grid-item>
-      <i-grid-item>
+      <i-grid-item bindtap="nav" data-menu="audit">
         <i-grid-icon><i-icon size="24" type="message"/></i-grid-icon>
         <i-grid-label>审核</i-grid-label>
       </i-grid-item>
@@ -19,11 +19,11 @@
   </i-grid>
   <i-grid>
     <i-row>
-      <i-grid-item>
+      <i-grid-item bindtap="nav" data-menu="assets">
           <i-grid-icon><i-icon size="24" type="dynamic"/></i-grid-icon>
           <i-grid-label>资产报表</i-grid-label>
       </i-grid-item>
-      <i-grid-item>
+      <i-grid-item bindtap="nav" data-menu="profit">
         <i-grid-icon><i-icon size="24" type="financial_fill"/></i-grid-icon>
         <i-grid-label>收益报表</i-grid-label>
       </i-grid-item>
