@@ -1,31 +1,12 @@
 {
   "pages": [
-    "pages/index/index",
-    "pages/userConsole/userConsole",
-    "pages/storageConsole/storageConsole",
-    "pages/databaseGuide/databaseGuide",
-    "pages/addFunction/addFunction",
-    "pages/deployFunctions/deployFunctions",
-    "pages/chooseLib/chooseLib"
+    "pages/index/index"
   ],
-  "tabBar": {
-    "selectedColor": "#61dd3c",
-    "list": [
-      {
-        "pagePath": "pages/index/index",
-        "text": "首页"
-      },
-      {
-        "pagePath": "pages/userConsole/userConsole",
-        "text": "我的"
-      }
-    ]
-  },
   "window": {
     "backgroundColor": "#F6F6F6",
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#F6F6F6",
-    "navigationBarTitleText": "相城金控资产云平台",
+    "navigationBarTitleText": "相城金控平台",
     "navigationBarTextStyle": "black"
   }
 }

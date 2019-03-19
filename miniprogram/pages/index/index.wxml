@@ -1,41 +1,19 @@
 <!--index.wxml-->
-<view>
-  <i-card title="卡片标题" extra="额外内容" thumb="https://i.loli.net/2017/08/21/599a521472424.jpg">
-      <view slot="content">内容不错</view>
-      <view slot="footer">尾部内容</view>
-  </i-card>
-</view>
 <view>　</view>
 <view>
   <i-grid>
     <i-row>
       <i-grid-item>
           <i-grid-icon ><i-icon size="24" type="tasklist"/></i-grid-icon>
-          <i-grid-label>项目信息</i-grid-label>
-      </i-grid-item>
-      <i-grid-item>
-        <i-grid-icon><i-icon size="24" type="group"/></i-grid-icon>
-        <i-grid-label>三重一大</i-grid-label>
-      </i-grid-item>
-      <i-grid-item>
-        <i-grid-icon><i-icon size="24" type="document"/></i-grid-icon>
-        <i-grid-label>合同管理</i-grid-label>
-      </i-grid-item>
-    </i-row>
-  </i-grid>
-  <i-grid>
-    <i-row>
-      <i-grid-item>
-          <i-grid-icon><i-icon size="24" type="coupons"/></i-grid-icon>
-          <i-grid-label>放款</i-grid-label>
-      </i-grid-item>
-      <i-grid-item>
-        <i-grid-icon><i-icon size="24" type="task"/></i-grid-icon>
-        <i-grid-label>归档</i-grid-label>
+          <i-grid-label>我的项目</i-grid-label>
       </i-grid-item>
       <i-grid-item>
         <i-grid-icon><i-icon size="24" type="message"/></i-grid-icon>
         <i-grid-label>会议</i-grid-label>
+      </i-grid-item>
+      <i-grid-item>
+        <i-grid-icon><i-icon size="24" type="message"/></i-grid-icon>
+        <i-grid-label>审核</i-grid-label>
       </i-grid-item>
     </i-row>
   </i-grid>
@@ -48,10 +26,6 @@
       <i-grid-item>
         <i-grid-icon><i-icon size="24" type="financial_fill"/></i-grid-icon>
         <i-grid-label>收益报表</i-grid-label>
-      </i-grid-item>
-      <i-grid-item >
-        <i-grid-icon></i-grid-icon>
-        <i-grid-label>　</i-grid-label>
       </i-grid-item>
     </i-row>
   </i-grid>
