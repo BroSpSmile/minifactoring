@@ -1,18 +1,46 @@
 // miniprogram/pages/project/project.js
+const app = getApp();
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    service:app.globalData.service,
+    array: [{ value: '', text: '全部' }],
+    index: 0,
+    queryParam: {
+      condition: {},
+      pageNum: 1,
+      pageSize: 10
+    },
+    pageInfo:{}
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    
+    wx.cloud.callFunction({
+      name: 'http',
+      data:{
+        endpoint: this.data.service +'/combo/indexsteps',
+        method:'GET'
+      },
+      complete: res => {
+        var kinds = this.data.array;
+        for(var index in res.result){
+          kinds.push(res.result[index]);
+        }
+        this.setData({
+          array: kinds
+        })
+      }
+    })
 
+    this.loadProject();
   },
 
   /**
@@ -62,5 +90,29 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+
+  bindPickerChange: function (e) {
+    this.setData({
+      index: e.detail.value,
+      'queryParam.condition.step': e.detail.value
+    });
+    this.loadProject();
+  },
+
+  loadProject:function(){
+    wx.cloud.callFunction({
+      name: 'http',
+      data: {
+        endpoint: this.data.service+'/project/query',
+        method: 'POST',
+        body: JSON.stringify(this.data.queryParam)
+      },
+      complete: res => {
+        this.setData({
+          pageInfo: res.result
+        })
+      }
+    })
   }
 })

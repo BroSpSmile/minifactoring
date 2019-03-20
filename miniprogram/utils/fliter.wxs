@@ -1,0 +1,38 @@
+var modelFliter = function(value){
+  if (value =="RECOURSE_RIGHT"){
+    return "是";
+  }else{
+    return "否";
+  }
+}
+
+var stepFliter = function (value){
+  var steps = [{ value: 0, text: "立项" }, { value: 1, text: "尽调" }, { value: 2, text: "尽调审核" }, { value: 3, text: "三重一大" }, { value: 4, text: "合同拟定" }, { value: 5, text: "合同审核" }, { value: 6, text: "签署" }, { value: 7, text: "放款申请" }, { value: 8, text: "放款审核" }, { value: 9, text: "放款操作" }, { value: 10, text: "归档" }, { value: 11, text: "归档审核" }, { value: 12, text: "完结" }]
+  return toText(steps, value);
+}
+
+var meetingKind = function (value){
+  var items = [{ value: 'APPROVAL', text: "立项会议" }, { value: 'DIRECTORS', text: "董事会决议会" }, { value: 'PARTY', text: "党总支会议" }, { value: 'BOARD', text: "董事会" }];
+  return toText(items, value);
+}
+
+var meetingStatus = function (value){
+  var items = [{ value: 'PLAN', text: "未开始" }, { value: 'MEETING', text: "进行中" }, { value: 'END', text: "已结束" }, { value: 'CANCELLED', text: "已取消" }];
+  return toText(items, value);
+}
+
+var toText = function(items,value){
+  for (var index = 0; index < items.length; index++) {
+    if (items[index].value == value) {
+      return items[index].text;
+    }
+  }
+  return "";
+}
+
+module.exports = {
+  modelFliter: modelFliter,
+  stepFliter: stepFliter,
+  meetingKind: meetingKind,
+  meetingStatus: meetingStatus
+}

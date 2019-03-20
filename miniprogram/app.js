@@ -10,6 +10,8 @@ App({
       })
     }
 
-    this.globalData = {}
+    this.globalData = {
+      service: 'http://47.92.246.72:8000'
+    }
   }
 })

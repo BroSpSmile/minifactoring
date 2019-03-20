@@ -1,27 +1,18 @@
-// miniprogram/pages/meeting/meeting.js
-const app = getApp();
-
+// miniprogram/pages/detail/detail.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    queryParam: {
-      condition: {
-        type: ['partake']
-      },
-      pageNum: 1,
-      pageSize: 10
-    },
-    pageInfo: {}
+
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.loadMeeting();
+
   },
 
   /**
@@ -71,24 +62,5 @@ Page({
    */
   onShareAppMessage: function () {
 
-  },
-
-  loadMeeting: function () {
-    var endpoint = app.globalData.service + '/meeting/query';
-    console.log(endpoint);
-    wx.cloud.callFunction({
-      name: 'http',
-      data: {
-        endpoint: endpoint,
-        method: 'POST',
-        body: JSON.stringify(this.data.queryParam)
-      },
-      complete: res => {
-        console.log('callFunction test result: ', res)
-        this.setData({
-          pageInfo: res.result
-        })
-      }
-    })
   }
 })

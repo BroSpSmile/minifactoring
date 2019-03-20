@@ -1,2 +1,13 @@
-<!--miniprogram/pages/meeting/meeting.wxml-->
-<text>miniprogram/pages/meeting/meeting.wxml</text>
+<wxs module="fliter" src="../../utils/fliter.wxs"></wxs>
+<wxs module="dateUtil" src="../../utils/timeUtil.wxs"></wxs>
+<view>　</view>
+<view wx:for="{{pageInfo.list}}" wx:key="{{id}}" wx:for-item="item">
+  <i-card title="{{item.theme}}" extra="{{item.originator.username}}" >
+    <view slot="content">会议类型: {{fliter.meetingKind(item.kind)}}</view>
+    <view slot="content">会议地点: {{item.place}}</view>
+    <view slot="content">会议时间: {{dateUtil.dateFormat(item.beginTime,'yyyy-MM-dd hh:mm')}}~{{dateUtil.dateFormat(item.endTime,'yyyy-MM-dd hh:mm')}}</view>
+    <view slot="content">会议状态: {{fliter.meetingStatus(item.status)}}</view>
+    <view slot="content">会议内容: {{item.content}}</view>
+  </i-card>
+  <view>　</view>
+</view>

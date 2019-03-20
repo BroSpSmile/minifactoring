@@ -1,2 +1,29 @@
 <!--miniprogram/pages/project/project.wxml-->
-<text>miniprogram/pages/project/project.wxml</text>
+<wxs module="fliter" src="../../utils/fliter.wxs"></wxs>
+<view>　</view>
+<picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}" range-key='text'>
+  <i-panel class="cell-panel-demo">
+    <i-cell title="项目状态" is-link value="{{array[index].text}}">
+    </i-cell>
+  </i-panel>
+</picker>
+<view>　</view>
+<view wx:for="{{pageInfo.list}}" wx:key="{{projectId}}" wx:for-item="item">
+<i-card  full title="{{item.projectName}}" extra="{{item.projectId}}" >
+  <view slot="content"> 让与人: {{item.detail.creditor}}</view>
+  <view slot="content"> 债务人: {{item.detail.debtor}}</view>
+  <view slot="content"> 追索权: {{fliter.modelFliter(item.model)}}</view>
+  <view slot="content"> 受让款(万元): {{item.detail.assignee}}</view>
+  <view slot="content"> 应收账款(万元): {{item.detail.receivable}}</view>
+  <view slot="content"> 年限:  {{item.detail.duration}}年</view>
+  <view slot="content"> 负责人: {{item.user.username}}</view>
+  <view slot="content">　</view>
+  <view slot="content">
+    <i-panel class="cell-panel-demo" >
+      <i-cell title="进度" is-link value="{{fliter.stepFliter(item.step)}}"></i-cell>
+    </i-panel>
+  </view>
+  <view slot="footer">点击查看明细</view>
+</i-card>
+<view>　</view>
+</view>
