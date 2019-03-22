@@ -20,7 +20,7 @@
   <view slot="content">　</view>
   <view slot="content">
     <i-panel class="cell-panel-demo" >
-      <i-cell title="进度" is-link value="{{fliter.stepFliter(item.step)}}"></i-cell>
+      <i-cell title="进度" is-link bindtap="showStep" data-id='{{item.id}}' value="{{fliter.stepFliter(item.step)}}"></i-cell>
     </i-panel>
   </view>
   <view slot="footer">点击查看明细</view>

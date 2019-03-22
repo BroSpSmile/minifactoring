@@ -1,0 +1,18 @@
+<!--miniprogram/pages/steps/index.wxml-->
+<wxs module="fliter" src="../../utils/fliter.wxs"></wxs>
+<view> </view>
+<i-row>
+    <i-col offset="2" span="22" >
+      <i-steps current="{{project.step}}" direction="vertical" >
+        <i-step wx:for="{{steps}}" wx:key="{{id}}" wx:for-item="item" >
+          <view slot="title">
+                {{fliter.stepCode(item.step)}}
+          </view>
+          <view slot="content">
+              {{fliter.stepStatus(item.status)}}
+          </view>
+        </i-step>
+      </i-steps>
+    </i-col>
+</i-row>
+

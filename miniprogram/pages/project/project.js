@@ -101,12 +101,16 @@ Page({
   },
 
   loadProject:function(){
+    var request = JSON.parse(JSON.stringify(this.data.queryParam));
+    if (this.data.queryParam.condition.step == -1){
+      request.condition = {};
+    }
     wx.cloud.callFunction({
       name: 'http',
       data: {
         endpoint: this.data.service+'/project/query',
         method: 'POST',
-        body: JSON.stringify(this.data.queryParam)
+        body: JSON.stringify(request)
       },
       complete: res => {
         this.setData({
@@ -117,9 +121,14 @@ Page({
   },
 
   showDetail:function(e){
-    console.log(e);
     wx.navigateTo({
       url: "../detail/detail?id="+e.currentTarget.dataset.id
+    })
+  },
+
+  showStep:function(e){
+    wx.navigateTo({
+      url: "../steps/index?id=" + e.currentTarget.dataset.id
     })
   }
 })

@@ -1,4 +1,4 @@
-// miniprogram/pages/detail/detail.js
+// miniprogram/pages/steps/index.js
 const app = getApp();
 Page({
 
@@ -7,7 +7,8 @@ Page({
    */
   data: {
     service: app.globalData.service,
-    detail:{}
+    project:{},
+    steps:[]
   },
 
   /**
@@ -15,7 +16,8 @@ Page({
    */
   onLoad: function (options) {
     var id = options.id;
-    this.querDetail(id)
+    this.queryProject(id);
+    this.querySteps(id);
   },
 
   /**
@@ -67,18 +69,33 @@ Page({
 
   },
 
-  querDetail: function (id) {
+  queryProject: function (id) {
     wx.cloud.callFunction({
       name: 'http',
       data: {
-        endpoint: this.data.service + '/factoring/'+id,
+        endpoint: this.data.service + '/project/' + id,
         method: 'GET'
       },
       complete: res => {
-        console.log(res);
-        
+        console.log(res)
         this.setData({
-          detail:res.result
+          project: res.result
+        })
+      }
+    })
+  },
+
+  querySteps:function(id){
+    wx.cloud.callFunction({
+      name: 'http',
+      data: {
+        endpoint: this.data.service + '/project/steps/'+id,
+        method: 'GET'
+      },
+      complete: res => {
+        console.log(res)
+        this.setData({
+          steps: res.result
         })
       }
     })
