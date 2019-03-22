@@ -1,2 +1,70 @@
-<!--miniprogram/pages/audit/audit.wxml-->
-<text>miniprogram/pages/audit/audit.wxml</text>
+<wxs module="fliter" src="../../utils/fliter.wxs"></wxs>
+<wxs module="dateUtil" src="../../utils/timeUtil.wxs"></wxs>
+<view wx:if="{{audit.id}}">
+  <view>　</view>
+  <view>
+    <i-cell title="当前节点:{{audit.flows[audit.step].desc}}" is-link value="审核流程"   bindtap="openFlows"></i-cell>
+    <view >　</view>
+    <i-steps current="{{audit.step==-1?100:audit.step}}" direction="vertical" wx:if="{{showFlows}}" >
+      <i-step wx:for="{{audit.flows}}" wx:key="{{id}}" wx:for-item="item" >
+        <view slot="title">
+              {{item.desc}}
+        </view>
+        <view slot="content">
+            {{item.user==null?item.role.roleName:item.user.username}}
+        </view>
+      </i-step>
+    </i-steps>
+  </view>
+  <i-card title="申请详情" >
+    <view slot="content">申请类型: {{fliter.auditType(audit.auditType)}}</view>
+    <view slot="content">项目编号: {{audit.project.projectId}}</view>
+    <view slot="content">项目名称: {{audit.project.projectName}}</view>
+    <view slot="content">申请人: {{audit.applicant.username}}</view>
+    <view slot="content">申请时间: {{dateUtil.dateFormat(audit.createTime)}}</view>
+  </i-card>
+  <i-row >
+    <i-col span="11" offset="1">
+      <i-button type="success" bind:click="handleOpen1">通过</i-button>
+    </i-col>
+    <i-col span="11" >
+      <i-button type="error" bind:click="handleOpen2">驳回</i-button>
+    </i-col>
+  </i-row>
+
+  <view >
+    <i-divider content="审核历史"  lineColor="#2d8cf0"></i-divider>
+    <view wx:for="{{audit.records}}" wx:key="{{id}}" wx:for-item="item">
+      <i-card full title="审核步骤: {{item.type}}">
+        <view slot="content"> 处理人: {{item.auditor.username}}</view>
+        <view slot="content"> 审核状态: <text class="{{item.result}}">{{fliter.auditResult(item.result)}}</text></view>
+        <view slot="content"> 审核时间: {{dateUtil.dateFormat(item.auditTime)}}</view>
+        <view slot="content"> 结果: {{item.status}}</view>
+        <view slot="content"> 备注: {{fliter.notNull(item.remark)}}</view>
+      </i-card>
+      <view>　</view>
+    </view>
+  </view>
+</view>
+
+<i-spin size="large" custom fix wx:if="{{ spinShow }}">
+  <i-icon type="refresh" size="20" i-class="icon-load"></i-icon>
+  <view>加载中...</view>
+</i-spin>
+
+<i-modal title="通过" visible="{{ visible1 }}" bind:ok="pass" bind:cancel="handleClose1">
+    <view>{{record.remark}}</view>
+</i-modal>
+
+<i-modal title="驳回" visible="{{ visible2 }}" bind:ok="reject" bind:cancel="handleClose2">
+  <picker bindchange="bindPickerChange" value="{{index}}" range="{{rejectflows}}" range-key='desc'>
+  <i-panel class="cell-panel-demo" >
+     <i-input is-link value="{{ rejectflows[index].desc }}" title="驳回到" disabled/>
+  </i-panel>
+</picker>
+<i-panel class="cell-panel-demo" >
+   <i-input value="{{ record.remark }}" title="驳回理由"  placeholder="输入驳回理由" />
+</i-panel>
+</i-modal>
+
+<i-message id="message" />

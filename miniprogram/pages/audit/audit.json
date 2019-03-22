@@ -1,3 +1,7 @@
 {
-  "usingComponents": {}
+  "navigationBarTitleText": "项目审核",
+  "usingComponents": {
+    "i-steps": "../../dist/steps/index",
+    "i-step": "../../dist/step/index"
+  }
 }

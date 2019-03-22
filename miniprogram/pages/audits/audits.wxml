@@ -1,0 +1,12 @@
+<wxs module="fliter" src="../../utils/fliter.wxs"></wxs>
+<wxs module="dateUtil" src="../../utils/timeUtil.wxs"></wxs>
+<view>　</view>
+<view wx:for="{{pageInfo.list}}" wx:key="{{id}}" wx:for-item="item">
+  <i-card title="{{item.project.projectName}}" extra="{{item.project.projectId}}" bindtap='showDetail' data-id='{{item.id}}'>
+    <view slot="content"> 审核类型: {{fliter.auditType(item.auditType)}}</view>
+    <view slot="content"> 申请人: {{item.applicant.username}}</view>
+    <view slot="content"> 申请时间: {{dateUtil.dateFormat(item.createTime)}}</view>
+    <view slot="footer">点击审核</view>
+  </i-card>
+  <view>　</view>
+</view>

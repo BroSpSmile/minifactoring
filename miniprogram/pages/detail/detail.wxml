@@ -1,0 +1,16 @@
+<wxs module="fliter" src="../../utils/fliter.wxs"></wxs>
+<wxs module="dateUtil" src="../../utils/timeUtil.wxs"></wxs>
+<i-panel title="{{detail.project.projectName}}">
+    <i-input title="让与人" value="{{ detail.creditor }}"  disabled />
+    <i-input title="债务人" value="{{ detail.debtor }}"  disabled />
+    <i-input title="基础合同" value="{{ detail.baseContract }}"  disabled />
+    <i-input title="追索权" value="{{ fliter.modelFliter(detail.project.model) }}"  disabled />
+    <i-input title="签署日期" value="{{dateUtil.dateFormat(detail.signDate) }}"  disabled />
+    <i-input title="应收账款受让款" value="{{ detail.assignee }}万元"  disabled />
+    <i-input title="应收账款" value="{{ detail.receivable }}万元"  disabled />
+    <i-input title="转让期限(年)" value="{{ detail.duration }}"  disabled />
+    <i-input title="合同回款日" value="{{ dateUtil.dateFormat(detail.remittanceDay) }}"  disabled />
+    <i-input title="保理费合计" value="{{ detail.totalFactoringFee }}万元"  disabled />
+    <i-input title="收益率(/年)" value="{{ detail.returnRate }}%"  disabled />
+    <i-input title="备注" value="{{ detail.remark }}"  disabled />
+</i-panel>

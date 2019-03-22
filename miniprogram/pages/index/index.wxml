@@ -11,7 +11,7 @@
         <i-grid-icon><i-icon size="24" type="message"/></i-grid-icon>
         <i-grid-label>会议</i-grid-label>
       </i-grid-item>
-      <i-grid-item bindtap="nav" data-menu="audit">
+      <i-grid-item bindtap="nav" data-menu="audits">
         <i-grid-icon><i-icon size="24" type="message"/></i-grid-icon>
         <i-grid-label>审核</i-grid-label>
       </i-grid-item>

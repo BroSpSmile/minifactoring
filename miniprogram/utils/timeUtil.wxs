@@ -6,6 +6,9 @@ var formatNumber = function (n) {
 var regYear = getRegExp("(y+)", "i");
 
 var dateFormat = function (timestamp, format) {
+  if (!timestamp){
+    return "";
+  }
   if (!format) {
     format = "yyyy-MM-dd hh:mm:ss";
   }

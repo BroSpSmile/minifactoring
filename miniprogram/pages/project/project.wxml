@@ -9,7 +9,7 @@
 </picker>
 <view>　</view>
 <view wx:for="{{pageInfo.list}}" wx:key="{{projectId}}" wx:for-item="item">
-<i-card  full title="{{item.projectName}}" extra="{{item.projectId}}" >
+<i-card  full title="{{item.projectName}}" extra="{{item.projectId}}" bindtap='showDetail' data-id='{{item.id}}'>
   <view slot="content"> 让与人: {{item.detail.creditor}}</view>
   <view slot="content"> 债务人: {{item.detail.debtor}}</view>
   <view slot="content"> 追索权: {{fliter.modelFliter(item.model)}}</view>

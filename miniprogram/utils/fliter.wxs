@@ -21,6 +21,23 @@ var meetingStatus = function (value){
   return toText(items, value);
 }
 
+var auditType = function(value){
+  var items = [{ value: 'TUNEUP', text: "尽调审核" }, { value: 'DRAWUP', text: "合同审核" }, { value: 'LOAN', text: "放款审核" }, { value: 'FILE', text: "归档审核" }];
+  return toText(items, value);
+}
+
+var auditResult = function (value) {
+  var items = [{ value: 'APPLY', text: "申请" }, { value: 'PASS', text: "通过" }, { value: 'REJECTED', text: "驳回" }];
+  return toText(items, value);
+}
+
+var notNull = function(value){
+  if (value == undefined ||value == null ){
+    return "";
+  }
+  return value;
+}
+
 var toText = function(items,value){
   for (var index = 0; index < items.length; index++) {
     if (items[index].value == value) {
@@ -34,5 +51,7 @@ module.exports = {
   modelFliter: modelFliter,
   stepFliter: stepFliter,
   meetingKind: meetingKind,
-  meetingStatus: meetingStatus
+  meetingStatus: meetingStatus,
+  auditType: auditType,
+  auditResult: auditResult
 }

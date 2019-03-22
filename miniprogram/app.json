@@ -6,7 +6,8 @@
     "pages/audit/audit",
     "pages/profit/profit",
     "pages/assets/assets",
-    "pages/detail/detail"
+    "pages/detail/detail",
+    "pages/audits/audits"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
@@ -14,5 +15,26 @@
     "navigationBarBackgroundColor": "#F6F6F6",
     "navigationBarTitleText": "相城金控平台",
     "navigationBarTextStyle": "black"
+  },
+  "usingComponents": {
+    "i-modal": "../../dist/modal/index",
+    "i-button": "../../dist/button/index",
+    "i-spin": "../../dist/spin/index",
+    "i-icon": "../../dist/icon/index",
+    "i-row": "../../dist/row/index",
+    "i-card": "../../dist/card/index",
+    "i-grid": "../../dist/grid/index",
+    "i-grid-item": "../../dist/grid-item/index",
+    "i-grid-icon": "../../dist/grid-icon/index",
+    "i-grid-label": "../../dist/grid-label/index",
+    "i-cell-group": "../../dist/cell-group/index",
+    "i-cell": "../../dist/cell/index",
+    "i-input": "../../dist/input/index",
+    "i-panel": "../../dist/panel/index",
+    "i-message": "../../dist/message/index",
+    "i-col": "../../dist/col/index",
+    "i-tabs": "../../dist/tabs/index",
+    "i-tab": "../../dist/tab/index",
+    "i-divider": "../../dist/divider/index"
   }
 }

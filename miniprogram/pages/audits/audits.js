@@ -1,4 +1,4 @@
-// miniprogram/pages/detail/detail.js
+// miniprogram/pages/audit/audit.js
 const app = getApp();
 Page({
 
@@ -7,16 +7,19 @@ Page({
    */
   data: {
     service: app.globalData.service,
-    detail:{}
+    queryParam: {
+      condition: {},
+      pageNum: 1,
+      pageSize: 10
+    },
+    pageInfo: {}
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(options)
-    var id = options.id;
-    this.querDetail(id)
+    this.loadAudits()
   },
 
   /**
@@ -68,20 +71,27 @@ Page({
 
   },
 
-  querDetail: function (id) {
+  loadAudits: function () {
     wx.cloud.callFunction({
       name: 'http',
       data: {
-        endpoint: this.data.service + '/factoring/'+id,
-        method: 'GET'
+        endpoint: this.data.service + '/audits/query',
+        method: 'POST',
+        body: JSON.stringify(this.data.queryParam)
       },
       complete: res => {
         console.log(res);
-        
         this.setData({
-          detail:res.result
+          pageInfo: res.result
         })
       }
+    })
+  },
+
+  showDetail: function (e) {
+    console.log(e);
+    wx.navigateTo({
+      url: "../audit/audit?id=" + e.currentTarget.dataset.id
     })
   }
 })

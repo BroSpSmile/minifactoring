@@ -95,7 +95,7 @@ Page({
   bindPickerChange: function (e) {
     this.setData({
       index: e.detail.value,
-      'queryParam.condition.step': e.detail.value
+      'queryParam.condition.step': e.detail.value -1
     });
     this.loadProject();
   },
@@ -113,6 +113,13 @@ Page({
           pageInfo: res.result
         })
       }
+    })
+  },
+
+  showDetail:function(e){
+    console.log(e);
+    wx.navigateTo({
+      url: "../detail/detail?id="+e.currentTarget.dataset.id
     })
   }
 })
