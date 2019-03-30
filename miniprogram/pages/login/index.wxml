@@ -1,0 +1,9 @@
+<view>　</view>
+<i-panel title="登录信息">
+  <i-input title="用户名" autofocus type="text" value="{{mobile}}" placeholder="请输入用户名" bind:change="bindMobileInput"></i-input>
+  <i-input title="密码" type="password" value="{{passwd}}" placeholder="请输入密码"  bind:change="bindPwdInput"></i-input>
+</i-panel>
+<view>　</view>
+<i-button bindtap="login" type="success">登录</i-button>
+
+<i-message id="message" />

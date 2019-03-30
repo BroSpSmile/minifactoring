@@ -1,32 +1,21 @@
 <!--index.wxml-->
 <view>　</view>
 <view>
-  <i-grid>
-    <i-row>
-      <i-grid-item bindtap="nav" data-menu="project">
-          <i-grid-icon ><i-icon size="24" type="tasklist"/></i-grid-icon>
-          <i-grid-label>我的项目</i-grid-label>
-      </i-grid-item>
-      <i-grid-item bindtap="nav" data-menu="meeting">
-        <i-grid-icon><i-icon size="24" type="message"/></i-grid-icon>
-        <i-grid-label>会议</i-grid-label>
-      </i-grid-item>
-      <i-grid-item bindtap="nav" data-menu="audits">
-        <i-grid-icon><i-icon size="24" type="message"/></i-grid-icon>
-        <i-grid-label>审核</i-grid-label>
-      </i-grid-item>
-    </i-row>
-  </i-grid>
-  <i-grid>
-    <i-row>
-      <i-grid-item bindtap="nav" data-menu="assets">
-          <i-grid-icon><i-icon size="24" type="dynamic"/></i-grid-icon>
-          <i-grid-label>资产报表</i-grid-label>
-      </i-grid-item>
-      <i-grid-item bindtap="nav" data-menu="profit">
-        <i-grid-icon><i-icon size="24" type="financial_fill"/></i-grid-icon>
-        <i-grid-label>收益报表</i-grid-label>
-      </i-grid-item>
-    </i-row>
-  </i-grid>
+  <i-card title="保理业务" i-class="factoring" bindtap="nav" data-menu="project">
+    <view slot="content" class="content">项目总数 {{factoringTotal.total}}</view>
+    <view slot="content" class="content">投资总额 {{factoringTotal.investment}}万元</view>
+    <view slot="content" class="content">累计总利润 {{factoringTotal.profit}}万元</view>
+  </i-card>
+  <view>　</view>
+  <i-card title="直投业务" i-class="zt">
+    <view slot="content" class="content">项目总数 0</view>
+    <view slot="content" class="content">投资总额 0万元</view>
+    <view slot="content" class="content">累计总利润 0万元</view>
+  </i-card>
+  <view>　</view>
+  <i-card title="母基金业务" i-class="mjj">
+    <view slot="content" class="content">项目总数 0</view>
+    <view slot="content" class="content">投资总额 0万元</view>
+    <view slot="content" class="content">累计总利润 0万元</view>
+  </i-card>
 </view>

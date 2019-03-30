@@ -1,0 +1,27 @@
+<view>　</view>
+<i-card full title="{{user.username}}" extra="保理公司" thumb="{{userInfo.avatarUrl}}">
+   <view slot="content" >手机号 {{user.mobile}}</view>
+   <view slot="content" >邮箱 {{user.email}}</view>
+</i-card>
+<view>　</view>
+<view>　</view>
+<view>
+  <i-grid i-class="grid">
+      <i-grid-item bindtap="nav" data-menu="meeting" i-class="meeting">
+        <i-grid-icon ><i-icon size="24" type="tasklist_fill"/></i-grid-icon>
+        <i-grid-label >会议</i-grid-label>
+      </i-grid-item>
+      <i-grid-item bindtap="nav" data-menu="audits" i-class="audit">
+        <i-grid-icon ><i-icon size="24" type="success_fill"/></i-grid-icon>
+        <i-grid-label>审核</i-grid-label>
+      </i-grid-item>
+      <i-grid-item bindtap="nav" data-menu="assets" i-class="assets">
+          <i-grid-icon ><i-icon size="24" type="dynamic_fill"/></i-grid-icon>
+          <i-grid-label >资产报表</i-grid-label>
+      </i-grid-item>
+      <i-grid-item bindtap="nav" data-menu="profit" i-class="profit">
+        <i-grid-icon ><i-icon size="24" type="financial_fill"/></i-grid-icon>
+        <i-grid-label >收益报表</i-grid-label>
+      </i-grid-item>
+  </i-grid>
+</view>

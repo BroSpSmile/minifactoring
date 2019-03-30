@@ -6,3 +6,22 @@ page {
   flex-direction: column;
   justify-content: flex-start;
 }
+
+.factoring{
+  background:#2db7f5;
+  color: #ffffff;
+}
+
+.zt{
+  background:#19be6b;
+  color: #ffffff;
+}
+
+.mjj{
+  background:#ff9900;
+  color: #ffffff;
+}
+
+.content{
+   color: #ffffff;
+}

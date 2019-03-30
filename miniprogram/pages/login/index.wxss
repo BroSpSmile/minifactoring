@@ -1,0 +1,5 @@
+/* miniprogram/pages/login/index.wxss */
+.log{
+  font-size: 16;
+  color: #495060;
+}
