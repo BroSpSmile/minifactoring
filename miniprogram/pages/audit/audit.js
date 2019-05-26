@@ -89,6 +89,7 @@ Page({
         body: JSON.stringify(this.data.queryParam)
       },
       complete: res => {
+        console.log(res);
         var rejectflows = [];
         var audit = res.result.data;
         for (var i = 0; i < audit.flows.length;i++){
@@ -175,6 +176,22 @@ Page({
     })
   },
 
+  showAttach:function(e){
+    const item = e.currentTarget.dataset.item;
+    wx.cloud.callFunction({
+      name: 'downloadFile',
+      data: {
+        endpoint: this.data.service + '/file?fileId='+item.itemValue,
+        method: 'GET',
+        body: JSON.stringify(this.data.record),
+        filePath: item.itemName
+      },
+      complete: res => {
+        console.log(res);
+      }
+    })
+  },
+  
   handleOpen1() {
     this.setData({
       visible1: true,

@@ -74,6 +74,4 @@ Page({
       url: "../" + event.currentTarget.dataset.menu + "/"+event.currentTarget.dataset.menu
     })
   }
-  
-
 })

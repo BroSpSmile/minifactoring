@@ -14,6 +14,10 @@ Page({
       pageNum: 1,
       pageSize: 10
     },
+    meetingstatus: [{ value: '', text: '全部' },{ value: 'PLAN', text: '未开始' }, { value: 'MEETING', text: '进行中' }, { value: 'END', text: '已结束' }, { value: 'CANCELLED', text: '已取消' }],
+    statusIndex:0,
+    meetingkinds: [{ value: '', text: '全部' },{ value: 'APPROVAL', text: '立项会议' }, { value: 'DIRECTORS', text: '三重一大会议' }],
+    kindIndex:0,
     pageInfo: {}
   },
 
@@ -73,9 +77,24 @@ Page({
 
   },
 
+  bindStatusChange: function (e) {
+    this.setData({
+      statusIndex: e.detail.value,
+      'queryParam.condition.status': e.detail.value 
+    });
+    this.loadMeeting();
+  },
+
+  bindKindChange: function (e) {
+    this.setData({
+      kindIndex: e.detail.value,
+      'queryParam.condition.kind': e.detail.value 
+    });
+    this.loadMeeting();
+  },
+
   loadMeeting: function () {
     var endpoint = app.globalData.service + '/meeting/query';
-    console.log(endpoint);
     wx.cloud.callFunction({
       name: 'http',
       data: {

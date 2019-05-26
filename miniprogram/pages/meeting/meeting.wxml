@@ -1,6 +1,19 @@
 <wxs module="fliter" src="../../utils/fliter.wxs"></wxs>
 <wxs module="dateUtil" src="../../utils/timeUtil.wxs"></wxs>
 <view>　</view>
+<picker bindchange="bindStatusChange" value="{{statusIndex}}" range="{{meetingstatus}}" range-key='text'>
+  <i-panel class="cell-panel-demo">
+    <i-cell title="会议状态" is-link value="{{meetingstatus[statusIndex].text}}">
+    </i-cell>
+  </i-panel>
+</picker>
+<picker bindchange="bindKindChange" value="{{kindIndex}}" range="{{meetingkinds}}" range-key='text'>
+  <i-panel class="cell-panel-demo">
+    <i-cell title="会议类型" is-link value="{{meetingkinds[kindIndex].text}}">
+    </i-cell>
+  </i-panel>
+</picker>
+<view>　</view>
 <view wx:for="{{pageInfo.list}}" wx:key="{{id}}" wx:for-item="item">
   <i-card title="{{item.theme}}" extra="{{item.originator.username}}" >
     <view slot="content">会议类型: {{fliter.meetingKind(item.kind)}}</view>

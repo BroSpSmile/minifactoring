@@ -16,12 +16,17 @@
       </i-step>
     </i-steps>
   </view>
-  <i-card title="申请详情" >
+  <i-card full title="申请详情" >
     <view slot="content">申请类型: {{fliter.auditType(audit.auditType)}}</view>
     <view slot="content">项目编号: {{audit.project.projectId}}</view>
     <view slot="content">项目名称: {{audit.project.projectName}}</view>
     <view slot="content">申请人: {{audit.applicant.username}}</view>
     <view slot="content">申请时间: {{dateUtil.dateFormat(audit.createTime)}}</view>
+    <view slot="content">
+      <view wx:for="{{audit.project.items}}" wx:key="{{id}}" wx:for-item="item">
+        <i-cell is-link title="{{item.itemName}}"   catchtap="showAttach" data-item="item"></i-cell>
+      </view>
+    </view>
   </i-card>
   <i-row >
     <i-col span="11" offset="1">
