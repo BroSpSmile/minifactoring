@@ -6,13 +6,19 @@
     <i-col offset="2" span="22" >
       <i-steps current="{{project.step}}" direction="vertical" >
         <i-step wx:for="{{steps}}" wx:key="{{id}}" wx:for-item="item" >
-          <view slot="title">
+          <view wx:if="{{(item.step=='FILE_AUDIT'||item.step=='TUNEUP_AUDIT'||item.step=='DRAWUP_AUDIT'||item.step=='LOAN_AUDIT')&&item.audit}}" slot="title">         
+          <navigator class='nav' url='../audit/audit?id={{item.audit.id}}'>{{fliter.stepCode(item.step)}}</navigator>
+          </view>
+          <view wx:elif="{{item.step=='MEETING'&&item.status=='COMPLETED'}}" slot="title">  
+          <navigator class='nav' url='../meeting/meeting?id=item.project.id'>{{fliter.stepCode(item.step)}}</navigator>
+          </view>
+          <view wx:else slot="title">
             {{fliter.stepCode(item.step)}}
           </view>
           <view slot="content">
             <text>{{fliter.stepStatus(item.status)}}
-            {{dateUtil.dateFormat(item.createTime)}}
-            {{dateUtil.dateFormat(item.modifyTime)}}
+            {{dateUtil.formatTime(item.createTime)}}
+            {{dateUtil.formatTime(item.modifyTime)}}
             </text>
           </view>
         </i-step>

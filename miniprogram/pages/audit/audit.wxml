@@ -23,12 +23,12 @@
     <view slot="content">申请人: {{audit.applicant.username}}</view>
     <view slot="content">申请时间: {{dateUtil.dateFormat(audit.createTime)}}</view>
     <view slot="content">
-      <view wx:for="{{audit.project.items}}" wx:key="{{id}}" wx:for-item="item">
-        <i-cell is-link title="{{item.itemName}}"   catchtap="showAttach" data-item="item"></i-cell>
+    <view wx:for="{{audit.project.items}}" wx:key="{{id}}" wx:for-item="item" >
+        <i-cell is-link wx:if="{{item.itemType==audit.auditType}}" title="{{item.itemName}}"   catchtap="showAttach" data-item="item"></i-cell>
       </view>
     </view>
   </i-card>
-  <i-row >
+  <i-row  wx:if="{{showAuditButton && audit.step>0}}">
     <i-col span="11" offset="1">
       <i-button type="success" bind:click="handleOpen1">通过</i-button>
     </i-col>

@@ -45,7 +45,12 @@ var dateFormat = function (timestamp, format) {
   return format;
 }
 
+var formatTime =function(date) {
+  console.log(getDate(date).getTime());
+  return dateFormat(getDate(date).getTime())
+}
 
 module.exports = {
-  dateFormat: dateFormat
+  dateFormat: dateFormat,
+  formatTime: formatTime
 }

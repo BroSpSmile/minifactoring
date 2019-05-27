@@ -1,1 +1,4 @@
 /* miniprogram/pages/steps/index.wxss */
+.nav{
+  color: #2d8cf0
+}

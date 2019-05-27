@@ -10,6 +10,7 @@ Page({
     service: app.globalData.service,
     audit:{},
     visible1:false,
+    showAuditButton:false,
     visible2: false,
     spinShow:true,
     index: 0,
@@ -89,7 +90,6 @@ Page({
         body: JSON.stringify(this.data.queryParam)
       },
       complete: res => {
-        console.log(res);
         var rejectflows = [];
         var audit = res.result.data;
         for (var i = 0; i < audit.flows.length;i++){
@@ -100,7 +100,8 @@ Page({
         this.setData({
           audit: audit,
           spinShow:false,
-          rejectflows: rejectflows
+          rejectflows: rejectflows,
+          showAuditButton: res.result.success
         })
       }
     })

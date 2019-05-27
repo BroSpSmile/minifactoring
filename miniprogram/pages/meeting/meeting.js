@@ -80,7 +80,7 @@ Page({
   bindStatusChange: function (e) {
     this.setData({
       statusIndex: e.detail.value,
-      'queryParam.condition.status': e.detail.value 
+      'queryParam.condition.status': this.data.meetingstatus[parseInt(e.detail.value)].value 
     });
     this.loadMeeting();
   },
@@ -88,12 +88,13 @@ Page({
   bindKindChange: function (e) {
     this.setData({
       kindIndex: e.detail.value,
-      'queryParam.condition.kind': e.detail.value 
+      'queryParam.condition.kind': this.data.meetingkinds[parseInt(e.detail.value)].value
     });
     this.loadMeeting();
   },
 
   loadMeeting: function () {
+    console.log(this.data.queryParam);
     var endpoint = app.globalData.service + '/meeting/query';
     wx.cloud.callFunction({
       name: 'http',
