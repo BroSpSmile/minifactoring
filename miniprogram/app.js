@@ -11,7 +11,7 @@ App({
     }
 
     this.globalData = {
-      service: 'http://47.92.246.72:8000'
+      service: 'http://112.124.28.42:80'
     }
   }
 })
