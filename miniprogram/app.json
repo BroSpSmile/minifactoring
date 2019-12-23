@@ -10,7 +10,8 @@
     "pages/audits/audits",
     "pages/steps/index",
     "pages/login/index",
-    "pages/user/index"
+    "pages/user/index",
+    "pages/fund/fund"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
@@ -52,5 +53,6 @@
     "i-tabs": "../../dist/tabs/index",
     "i-tab": "../../dist/tab/index",
     "i-divider": "../../dist/divider/index"
-  }
+  },
+  "sitemapLocation": "sitemap.json"
 }

@@ -11,6 +11,8 @@
 	"appid": "wx84d783d3cf910c2d",
 	"projectname": "minifactoring",
 	"libVersion": "2.2.5",
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
 	"condition": {
 		"search": {
 			"current": -1,

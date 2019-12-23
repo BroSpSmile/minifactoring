@@ -1,2 +1,19 @@
-<!--miniprogram/pages/profit/profit.wxml-->
-<text>利润报表</text>
+<wxs module="fliter" src="../../utils/fliter.wxs"></wxs>
+<wxs module="dateUtil" src="../../utils/timeUtil.wxs"></wxs>
+<view>　</view>
+<picker mode="date" value="{{queryMonth}}" fields="month" bindchange="bindDateChange">
+  <i-panel class="cell-panel-demo">
+    <i-cell title="日期"  value="{{queryMonth}}">
+    </i-cell>
+  </i-panel>
+</picker>
+<view>　</view>
+<i-card title="保理利润报表" full="true">
+  <view slot="content">
+    <i-input value="营业收入" title="项目" disabled right />
+  </view>
+  <view slot="content">
+    <i-input value="{{ report.monthProfit }} 元" title="本期发生额" disabled right />
+  </view>
+  <view slot="content"><i-input value="{{ report.yearProfit }} 元" title="累计发生额" disabled right /></view>
+</i-card>

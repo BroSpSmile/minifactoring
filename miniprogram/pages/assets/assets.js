@@ -1,11 +1,15 @@
 // miniprogram/pages/assets/assets.js
+const app = getApp();
+const format = require("../../utils/util.js");
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    queryMonth: format.tsFormatTime(new Date(), 'Y-M'),
+    report: []
   },
 
   /**
@@ -19,7 +23,7 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    this.loadData();
   },
 
   /**
@@ -62,5 +66,29 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+
+  bindDateChange: function (e) {
+    this.setData({
+      queryMonth: e.detail.value
+    })
+    this.loadData();
+  },
+
+  loadData:function(){
+    var endpoint = app.globalData.service + '/assets/' + this.data.queryMonth;
+    wx.cloud.callFunction({
+      name: 'http',
+      data: {
+        endpoint: endpoint,
+        method: 'GET'
+      },
+      complete: res => {
+        //console.log('callFunction test result: ', res)
+        this.setData({
+          report: res.result
+        })
+      }
+    })
   }
 })

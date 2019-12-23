@@ -1,2 +1,43 @@
-<!--miniprogram/pages/assets/assets.wxml-->
-<text>资产报表</text>
+<wxs module="fliter" src="../../utils/fliter.wxs"></wxs>
+<wxs module="dateUtil" src="../../utils/timeUtil.wxs"></wxs>
+<view>　</view>
+<picker mode="date" value="{{queryMonth}}" fields="month" bindchange="bindDateChange">
+  <i-panel class="cell-panel-demo">
+    <i-cell title="日期"  value="{{queryMonth}}">
+    </i-cell>
+  </i-panel>
+</picker>
+<view>　</view>
+<i-card title="资产" full="true">
+  <view slot="content">
+    <i-panel title="应收账款" >
+      <i-input value="{{ report[0].zcamount }}" title="期末余额" disabled right />
+      <i-input value="{{ report[0].zctotalamount }}" title="年初余额" disabled right />
+    </i-panel>
+    <i-panel title="应收账款">
+      <i-input value="{{ report[1].zcamount }}" title="期末余额" disabled right />
+      <i-input value="{{ report[1].zctotalamount }}" title="年初余额" disabled right />
+    </i-panel>
+    <i-panel title="应收账款">
+      <i-input value="{{ report[2].zcamount }}" title="期末余额" disabled right />
+      <i-input value="{{ report[2].zctotalamount }}" title="年初余额" disabled right />
+    </i-panel>
+  </view>
+</i-card>
+<view>　</view>
+<i-card title="负债和所有者权益(或股东权益)" full="true">
+  <view slot="content">
+    <i-panel title="应收账款" >
+      <i-input value="-" title="期末余额" disabled right />
+      <i-input value="-" title="期末余额" disabled right />
+    </i-panel>
+    <i-panel title="应收账款">
+      <i-input value="-" title="期末余额" disabled right />
+      <i-input value="-" title="年初余额" disabled right />
+    </i-panel>
+    <i-panel title="应收账款">
+      <i-input value="-" title="期末余额" disabled right />
+      <i-input value="-" title="年初余额" disabled right />
+    </i-panel>
+  </view>
+</i-card>

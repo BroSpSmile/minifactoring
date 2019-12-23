@@ -3,19 +3,18 @@
 <view>
   <i-card title="保理业务" i-class="factoring" bindtap="nav" data-menu="project">
     <view slot="content" class="content">项目总数 {{factoringTotal.total}}</view>
-    <view slot="content" class="content">投资总额 {{factoringTotal.investment}}万元</view>
-    <view slot="content" class="content">累计总利润 {{factoringTotal.profit}}万元</view>
+    <view slot="content" class="content">投资总额 {{factoringTotal.investment}} 元</view>
+    <view slot="content" class="content">累计总利润 {{factoringTotal.profit}} 元</view>
   </i-card>
   <view>　</view>
-  <i-card title="直投业务" i-class="zt">
-    <view slot="content" class="content">项目总数 0</view>
-    <view slot="content" class="content">投资总额 0万元</view>
-    <view slot="content" class="content">累计总利润 0万元</view>
+  <i-card title="直投业务" i-class="zt" bindtap="nav" data-menu="fund">
+    <view slot="content" class="content">项目总数 {{fundTotal.total}}</view>
+    <view slot="content" class="content">投资总额 {{fundTotal.investment}} 元</view>
   </i-card>
   <view>　</view>
   <i-card title="母基金业务" i-class="mjj">
     <view slot="content" class="content">项目总数 0</view>
-    <view slot="content" class="content">投资总额 0万元</view>
-    <view slot="content" class="content">累计总利润 0万元</view>
+    <view slot="content" class="content">投资总额 0 元</view>
+    <view slot="content" class="content">累计总利润 0 元</view>
   </i-card>
 </view>
