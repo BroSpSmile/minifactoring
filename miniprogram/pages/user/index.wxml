@@ -1,7 +1,8 @@
 <view>　</view>
 <i-card full title="{{user.username}}" extra="保理公司" thumb="{{userInfo.avatarUrl}}">
-   <view slot="content" >手机号 {{user.mobile}}</view>
-   <view slot="content" >邮箱 {{user.email}}</view>
+   <view slot="content" >
+    <i-input value="{{ user.mobile }}" title="手机号" disabled  /> </view>
+   <view slot="content" ><i-input value="{{ user.email }}" title="邮箱" disabled  /></view>
 </i-card>
 <view>　</view>
 <view>　</view>
