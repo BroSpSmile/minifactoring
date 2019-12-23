@@ -1,2 +1,24 @@
 <!--miniprogram/pages/fund/fund.wxml-->
-<text>直投项目</text>
+<wxs module="fliter" src="../../utils/fliter.wxs"></wxs>
+<wxs module="dateUtil" src="../../utils/timeUtil.wxs"></wxs>
+<view>　</view>
+<picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}" range-key='text'>
+  <i-panel class="cell-panel-demo">
+    <i-cell title="项目状态"  value="{{array[index].text}}">
+    </i-cell>
+  </i-panel>
+</picker>
+<view>　</view>
+<view wx:for="{{pageInfo.list}}" wx:key="{{projectId}}" wx:for-item="item">
+<i-card  full title="{{item.projectName}}" extra="{{item.projectId}}" bindtap='showDetail' data-projectId='{{item.projectId}}'>
+  <view slot="content"> <i-input value="{{ fliter.fundStep(item.detail.projectStep) }}" title="项目进度" disabled right /></view>
+  <view slot="content"> <i-input value="{{ item.detail.companySortName }}" title="公司简称" disabled right /></view>
+  <view slot="content"> <i-input value="{{ item.detail.investment }}" title="投资金额" disabled right /></view>
+  <view slot="content"> <i-input value="{{ item.detail.investmentPart }}" title="投资主体" disabled right /></view>
+  <view slot="content"> <i-input value="{{ item.detail.shareHodingRate }}%" title="投后持股比例" disabled right /></view>
+  <view slot="content"> <i-input value="{{ dateUtil.dateFormat(item.detail.investemntTime,'yyyy-MM-dd') }}" title="出资时间" disabled right /></view>
+  <view slot="content">　</view>
+  <view slot="footer">点击查看明细</view>
+</i-card>
+<view>　</view>
+</view>

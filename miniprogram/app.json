@@ -11,7 +11,8 @@
     "pages/steps/index",
     "pages/login/index",
     "pages/user/index",
-    "pages/fund/fund"
+    "pages/fund/fund",
+    "pages/funddetail/index"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",

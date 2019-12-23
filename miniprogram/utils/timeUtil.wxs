@@ -12,7 +12,6 @@ var dateFormat = function (timestamp, format) {
   if (!format) {
     format = "yyyy-MM-dd hh:mm:ss";
   }
-  timestamp = parseInt(timestamp);
   var realDate = getDate(timestamp);
   function timeFormat(num) {
     return num < 10 ? '0' + num : num;

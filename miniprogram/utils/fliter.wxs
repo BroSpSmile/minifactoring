@@ -36,6 +36,11 @@ var auditType = function(value){
   return toText(items, value);
 }
 
+var fundStep = function(value){
+  var items = [{ value: 'STOP', text: "项目终止" }, { value: 'SUSPEND', text: "暂停" }, { value: 'INITIAL_CONTACT', text: "初步接触" }, { value: 'SIGN_CONFIDENTIALITY', text: "签署保密协议" }, { value: 'INITIAL_TUNING', text: "初步尽调" }, { value: 'APPROVAL', text: "项目立项" }, { value: 'DEEP_TUNING', text: "深入尽调" }, { value: 'PARTMENT_AUDIT', text: "风控审核" }, { value: 'AUDIT_MEETING', text: "三重一大" }, { value: 'SASAC_APPROVAL', text: "国资委审批" }, { value: 'GOV_APPROVAL', text: "区政府审批" }, { value: 'CONTRACT_SIGN', text: "合同签署" }, { value: 'CONTRACT_AUDIT', text: "合同审核" }, { value: 'PAYMENT', text: "付款通知" }, { value: 'PAYMENT_AUDIT', text: "付款审核" }, { value: 'FUND_LOAN', text: "支付打款" }, { value: 'INFO_CHANGE', text: "验资/信息变更" }, { value: 'FILE', text: "项目归档" }, { value: 'FILE_AUDIT', text: "归档审核" }, { value: 'POST_INVESTMENT', text: "投后管理" }, { value: 'OUT', text: "项目退出" }];
+  return toText(items, value);
+}
+
 var auditResult = function (value) {
   var items = [{ value: 'APPLY', text: "申请" }, { value: 'PASS', text: "通过" }, { value: 'REJECTED', text: "驳回" }];
   return toText(items, value);
@@ -65,5 +70,6 @@ module.exports = {
   auditType: auditType,
   auditResult: auditResult,
   stepStatus: stepStatus,
-  stepCode: stepCode
+  stepCode: stepCode,
+  fundStep: fundStep
 }
