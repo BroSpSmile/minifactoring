@@ -7,12 +7,12 @@ var modelFliter = function(value){
 }
 
 var stepCode = function (value) {
-  var steps = [{ value: 'APPROVAL', text: "立项" }, { value: 'TUNEUP', text: "尽调" }, { value: 'TUNEUP_AUDIT', text: "尽调审核" }, { value: 'MEETING', text: "三重一大" }, { value: 'DRAWUP', text: "合同拟定" }, { value: 'DRAWUP_AUDIT', text: "合同审核" }, { value: 'SIGN', text: "签署" }, { value: 'LOAN', text: "放款申请" }, { value: 'LOAN_AUDIT', text: "放款审核" }, { value: 'LOANEN', text: "放款操作" }, { value: 'FILE', text: "归档" }, { value: 'FILE_AUDIT', text: "归档审核" }, { value: 'BACK', text: "待回款" }, { value: 'END', text: "完结" }]
+  var steps = [{ value: 'APPROVAL', text: "业务申请" }, { value: 'TUNEUP', text: "业务审核" }, { value: 'TUNEUP_AUDIT', text: "尽调审核" }, { value: 'MEETING', text: "三重一大" }, { value: 'DRAWUP', text: "合同拟定" }, { value: 'DRAWUP_AUDIT', text: "合同审核" }, { value: 'SIGN', text: "签署" }, { value: 'LOAN', text: "放款录入" }, { value: 'LOAN_AUDIT', text: "放款审核" }, { value: 'AFTER_LOAN', text: "贷后管理" }, { value: 'FILE', text: "归档" }, { value: 'FILE_AUDIT', text: "归档审核" }, { value: 'BACK', text: "待回款" }, { value: 'END', text: "完结" }]
   return toText(steps, value);
 }
 
 var stepFliter = function (value){
-  var steps = [{ value: 0, text: "立项" }, { value: 1, text: "尽调" }, { value: 2, text: "尽调审核" }, { value: 3, text: "三重一大" }, { value: 4, text: "合同拟定" }, { value: 5, text: "合同审核" }, { value: 6, text: "签署" }, { value: 7, text: "放款申请" }, { value: 8, text: "放款审核" }, { value: 9, text: "放款操作" }, { value: 10, text: "归档" }, { value: 11, text: "归档审核" }, { value: 12, text: "待回款" }, { value: 13, text: "完结" }]
+  var steps = [{ value: 0, text: "业务申请" }, { value: 1, text: "业务审核" }, { value: 2, text: "放款录入" }, { value: 3, text: "贷后管理" }, { value: 4, text: "归档" }, { value: 5, text: "合同审核" }, { value: 6, text: "签署" }, { value: 7, text: "放款申请" }, { value: 8, text: "放款审核" }, { value: 9, text: "放款操作" }, { value: 10, text: "归档" }, { value: 11, text: "归档审核" }, { value: 12, text: "待回款" }, { value: 13, text: "完结" }]
   return toText(steps, value);
 }
 

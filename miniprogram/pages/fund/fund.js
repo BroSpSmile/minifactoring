@@ -21,8 +21,9 @@ Page({
   bindPickerChange: function (e) {
     this.setData({
       index: e.detail.value,
-      'queryParam.condition.detail.projectStep': this.data.meetingstatus[parseInt(e.detail.value)].value
+      'queryParam.condition.detail.projectStep': this.data.array[parseInt(e.detail.value)].value
     });
+    console.log(this.data.queryParam);
     this.loadProject();
   },
 
@@ -37,6 +38,7 @@ Page({
         method: 'GET'
       },
       complete: res => {
+        console.log(res.result);
         var kinds = this.data.array;
         for (var index in res.result) {
           kinds.push(res.result[index]);
@@ -99,8 +101,8 @@ Page({
 
   loadProject: function () {
     var request = JSON.parse(JSON.stringify(this.data.queryParam));
-    if (this.data.queryParam.condition.step == -1) {
-      request.condition = {};
+    if (this.data.queryParam.condition.detail.projectStep == "") {
+      request.condition.detail.projectStep = null;
     }
     wx.cloud.callFunction({
       name: 'http',

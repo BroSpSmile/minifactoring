@@ -95,6 +95,12 @@ Page({
 
   loadMeeting: function () {
     console.log(this.data.queryParam);
+    if(this.data.queryParam.condition.status==""){
+      this.data.queryParam.condition.status = null;
+    }
+    if (this.data.queryParam.condition.kind == "") {
+      this.data.queryParam.condition.kind = null;
+    }
     var endpoint = app.globalData.service + '/meeting/query';
     wx.cloud.callFunction({
       name: 'http',
