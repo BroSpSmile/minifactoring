@@ -13,9 +13,9 @@
   <view slot="content"> 让与人: {{item.detail.creditor}}</view>
   <view slot="content"> 债务人: {{item.detail.debtor}}</view>
   <view slot="content"> 追索权: {{fliter.modelFliter(item.model)}}</view>
-  <view slot="content"> 受让款(万元): {{item.detail.assignee}}</view>
-  <view slot="content"> 应收账款(万元): {{item.detail.receivable}}</view>
-  <view slot="content"> 年限:  {{item.detail.duration}}年</view>
+  <view slot="content"> 受让款: {{item.detail.assignee}}元</view>
+  <view slot="content"> 应收账款: {{item.detail.receivable}}元</view>
+  <view slot="content"> 转让期限:  {{item.detail.duration}}月</view>
   <view slot="content"> 负责人: {{item.user.username}}</view>
   <view slot="content">　</view>
   <view slot="content">

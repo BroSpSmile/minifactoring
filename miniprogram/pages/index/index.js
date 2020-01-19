@@ -56,7 +56,6 @@ Page({
       },
       complete: res => {
         var data = res.result;
-        console.log(data);
         var factoringTotal = {
           total: 0,
           investment: 0.0,

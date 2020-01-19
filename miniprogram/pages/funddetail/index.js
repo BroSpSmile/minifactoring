@@ -75,9 +75,14 @@ Page({
         method: 'GET'
       },
       complete: res => {
-        console.log(res);
+        let data = res.result;
+        data.memberBStr = "";
+        for (let index in data.memberBs){
+          data.memberBStr += ","+data.memberBs[index].username;
+        }
+        data.memberBStr = data.memberBStr.replace(/^(\s|,)+|(\s|,)+$/g, '');
         this.setData({
-          detail: res.result
+          detail: data
         })
       }
     })

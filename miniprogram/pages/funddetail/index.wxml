@@ -3,14 +3,19 @@
 <i-card  full title="项目信息" >
   <view slot="content"> <i-input value="{{ detail.projectId }}" title="项目编号" disabled right /></view>
   <view slot="content"> <i-input value="{{ detail.companySortName }}" title="项目名称" disabled right /></view>
+  <view slot="content"> <i-input value="{{ detail.fundType }}" title="项目类型" disabled right /></view>
   <view slot="content"> <i-input value="{{ detail.memberA.username }}" title="项目成员A角" disabled right /></view>
-  <view slot="content"> <i-input value="{{ detail.memberB.username }}" title="项目成员B角" disabled right /></view>
+  <view slot="content"> <i-input value="{{ detail.memberBStr }}" title="项目成员B角" disabled right /></view>
   <view slot="content"> <i-input value="{{ detail.projectChannel }}" title="项目来源" disabled right /></view>
-  <view slot="content"> <i-input value="{{ detail.investment }}" title="投资金额" disabled right /></view>
+  <view slot="content"> <i-input value="{{ detail.bound }}" title="项目地域" disabled right /></view>
+  <view slot="content"> <i-input value="{{ detail.investment }} 元" title="认缴金额" disabled right /></view>
+  <view slot="content"> <i-input value="{{ detail.realInvestment }} 元" title="实缴金额" disabled right /></view>
   <view slot="content"> <i-input value="{{ detail.investmentPart }}" title="投资主体" disabled right /></view>
   <view slot="content"> <i-input value="{{ detail.shareHodingRate }}%" title="投后持股比例" disabled right /></view>
-  <view slot="content"> <i-input value="{{ detail.preVal }}" title="投前估值" disabled right /></view>
-  <view slot="content"> <i-input value="{{ detail.postVal }}" title="投后估值" disabled right /></view>
+  <view slot="content"> <i-input value="{{ detail.sharePrice }} 元" title="每股价格" disabled right /></view>
+  <view slot="content"> <i-input value="{{ detail.shareNum }} 万股" title="股份数量" disabled right /></view>
+  <view slot="content"> <i-input value="{{ detail.preVal }} 元" title="投前估值" disabled right /></view>
+  <view slot="content"> <i-input value="{{ detail.postVal }} 元" title="投后估值" disabled right /></view>
   <view slot="content"> <i-input value="{{ dateUtil.dateFormat(detail.investemntTime,'yyyy-MM-dd') }}" title="出资时间" disabled right /></view>
 </i-card>
 <view>　</view>
@@ -18,10 +23,11 @@
   <view slot="content"> <i-input value="{{ detail.companySortName }}" title="公司简称" disabled right /></view>
   <view slot="content"> <i-input value="{{ detail.companyFullName }}" title="公司全称" disabled right /></view>
   <view slot="content"> <i-input value="{{ detail.controllerOwner }}" title="实际控制人" disabled right /></view>
-  <view slot="content"> <i-input value="{{ detail.registeredCapital }}" title="注册资本" disabled right /></view>
-  <view slot="content"> <i-input value="{{ detail.chairman }}" title="董事长" disabled right /></view>
-  <view slot="content"> <i-input value="{{ detail.industry }}" title="所属行业" disabled right /></view>
+  <view slot="content"> <i-input value="{{ detail.registeredCapital }} 元" title="注册资本" disabled right /></view>
+  <view slot="content"> <i-input value="{{ detail.paidCapital }} 元" title="实收资本" disabled right /></view>
+  <view slot="content"> <i-input value="{{ detail.registerTime }}" title="注册时间" disabled right /></view>
   <view slot="content"> <i-input value="{{ detail.location }}" title="所在地" disabled right /></view>
+  <view slot="content"> <i-input value="{{ detail.industry }}" title="所属行业" disabled right /></view>
   <view slot="content"> <i-input value="{{ detail.mainBusiness }}" title="主营业务" disabled right /></view>
   <view slot="content"> <i-input value="{{ detail.address }}" title="公司地址" disabled right /></view>
 </i-card>
