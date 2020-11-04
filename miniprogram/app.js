@@ -11,7 +11,7 @@ App({
     }
 
     this.globalData = {
-      service: 'http://112.124.28.42:8000'
+      service: 'http://xcjk.szxc.gov.cn/'
     }
   }
 })
